@@ -1,10 +1,12 @@
 import React from "react";
 import Note from "./Note";
 import AddNote from "./AddNote";
+import {motion} from "framer-motion";
 
-function NotesList({ notes, handleAddNote, handleDeleteNote }) {
+
+function NotesList({ notes, handleAddNote, handleDeleteNote, handleUpdateNote }) {
     return (
-        <div className="notes-list">
+        <motion.div layout className="notes-list">
             {notes.map((note) =>
                 <Note
                     key={note.id}
@@ -12,10 +14,11 @@ function NotesList({ notes, handleAddNote, handleDeleteNote }) {
                     description={note.description}
                     date={note.date}
                     handleDeleteNote={handleDeleteNote}
+                    handleUpdateNote={handleUpdateNote}
                 />
             )}
             <AddNote handleAddNote={handleAddNote} />
-        </div>
+        </motion.div>
     )
 }
 

@@ -14,11 +14,23 @@ body {
 }
 
 .dark-mode {
+    transition: background-color 0.25s ease-in-out;
     background: #2f3542;
 }
 
+.light-mode {
+    transition: background-color 0.25s ease-in-out;
+    background: #f7f1e3;
+}
+
 .dark-mode h1 {
+    transition: color ease-in-out 0.5s;
     color: #f7f1e3;
+}
+
+.light-mode h1 {
+    transition: color ease-in-out 0.5s;
+    color: #2f3542;
 }
 
 .container {

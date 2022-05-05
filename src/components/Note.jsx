@@ -1,9 +1,16 @@
 import React from 'react'
 import {MdDeleteForever} from "../react-icons/react-icons-proxy";
+import {motion} from "framer-motion";
 
-function Note({ id, description, date, handleDeleteNote }) {
+function Note({id, description, date, handleDeleteNote}) {
+
     return (
-        <div className="note">
+        <motion.div
+            whileHover={{scale: 1.05}}
+            whileVisible={{x: 50}}
+            transition={{duration: 0.25}}
+            className="note"
+        >
             <p>{description}</p>
             <div className="note-footer">
                 <small>{date}</small>
@@ -13,7 +20,7 @@ function Note({ id, description, date, handleDeleteNote }) {
                     size="1.3rem"
                 />
             </div>
-        </div>
+        </motion.div>
     )
 }
 
